@@ -1,9 +1,13 @@
 package com.ljustin.jblackjack;
 
+import com.ljustin.jblackjack.models.Deck;
+import com.ljustin.jblackjack.models.DeckFactory;
+
 public class Driver
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello World");
+        Deck frenchDeck = DeckFactory.makeDeck("French");
+        
     }
 }

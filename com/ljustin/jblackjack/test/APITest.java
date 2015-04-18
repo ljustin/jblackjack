@@ -1,9 +1,12 @@
 package com.ljustin.jblackjack.test;
 
-import static org.junit.Assert.*;
+import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.ljustin.jblackjack.models.Deck;
+import com.ljustin.jblackjack.models.DeckFactory;
 
 public class APITest
 {
@@ -14,9 +17,11 @@ public class APITest
     }
 
     @Test
-    public void test()
+    public void frenchDeckTest()
     {
-        fail("Not yet implemented");
+        Deck frenchDeck = DeckFactory.makeDeck("French");
+        System.out.println(frenchDeck.numCards());
+        Assert.assertTrue(frenchDeck.numCards() == 52);
     }
 
 }
