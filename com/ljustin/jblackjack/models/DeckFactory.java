@@ -10,7 +10,7 @@ public class DeckFactory
     public static Deck makeDeck(String type)
     {
         List<Card> cards = new ArrayList<Card>();
-        
+         
         if (type.equalsIgnoreCase("French"))
         {
             for (Suit s: Suit.values())
