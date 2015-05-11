@@ -1,5 +1,8 @@
 package com.ljustin.jblackjack;
 
+import com.ljustin.jblackjack.game.BlackJackGameEngine;
+import com.ljustin.jblackjack.game.BlackJackIntroState;
+import com.ljustin.jblackjack.game.GameEngine;
 import com.ljustin.jblackjack.models.Deck;
 import com.ljustin.jblackjack.models.DeckFactory;
 
@@ -9,16 +12,15 @@ public class Driver
     {
         Deck frenchDeck = DeckFactory.makeDeck("French");
         
+        // init game (LOADING STATE)
         
-        // init game
-        
-        // init player
+        // init player (MENU STATE)
         
         // 1 player game
         
-        // give name, betting money
+        // give name, betting money (GAME SETUP)
         
-        // 1 card face down on dealer
+        // 1 card face down on dealer (GAME PLAY)
         
         // player receives two cards
         
@@ -42,7 +44,22 @@ public class Driver
         
         // if dealer busts, all remaining players
         // win sum equal to the bet
-        // or if player has higher hand, wins sum equal to the bet
+        // or if player has higher hand, wins sum equal to the bet (GAME OVER)
+        
+        GameEngine game = new BlackJackGameEngine();
+        game.init();
+        
+        game.changeState(BlackJackIntroState.getInstance());
+        
+        while (game.isRunning())
+        {
+            game.handleEvents();
+            game.update();
+            game.render();
+        }
+        
+        game.cleanUp();
+        
         
     }
 }
