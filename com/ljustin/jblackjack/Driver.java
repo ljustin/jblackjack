@@ -1,8 +1,8 @@
 package com.ljustin.jblackjack;
 
-import com.ljustin.jblackjack.game.BlackJackGameEngine;
-import com.ljustin.jblackjack.game.BlackJackIntroState;
-import com.ljustin.jblackjack.game.GameEngine;
+import com.ljustin.jblackjack.game.engine.BlackJackGameEngine;
+import com.ljustin.jblackjack.game.engine.BlackJackIntroState;
+import com.ljustin.jblackjack.game.engine.GameEngine;
 import com.ljustin.jblackjack.models.Deck;
 import com.ljustin.jblackjack.models.DeckFactory;
 
