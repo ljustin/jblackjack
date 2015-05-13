@@ -1,23 +1,22 @@
 package com.ljustin.jblackjack.game;
 
+import java.util.Scanner;
+
 public class BlackJackGame implements Game
 {
+    private final static Scanner scanner = new Scanner(System.in);
     // data
     // console
     // inputs
-    
-
-    @Override
-    public void showIntro()
+    public void show(String s)
     {
-        System.out.println("**********************************");
-        System.out.println("Welcome to JBlackJack Console App!\nHope you go home with a million bucks!\n");
-        System.out.println("**********************************");
+        System.out.println(s);
     }
 
     @Override
-    public void showMenu()
+    public String getInput()
     {
-        System.out.println("Menu!!");
+        return scanner.nextLine();
     }
+
 }

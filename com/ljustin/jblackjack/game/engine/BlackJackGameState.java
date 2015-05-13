@@ -8,10 +8,12 @@ public abstract class BlackJackGameState extends GameState
         super(name);
         // TODO Auto-generated constructor stub
     }
+    
 
     @Override
-    public void init(GameEngine game)
+    public void init(GameEngine ge)
     {
+        super.init(ge);
         // TODO Auto-generated method stub
         System.out.println("Initializing game state" + this.getName());
     }

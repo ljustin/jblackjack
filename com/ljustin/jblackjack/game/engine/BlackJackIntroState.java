@@ -11,17 +11,35 @@ public class BlackJackIntroState extends BlackJackGameState
         super(name);
     }
 
-    
+
     public static GameState getInstance()
     {
         return instance;
     }
     
+    
+    private String getIntroMessage()
+    {
+        String s = "**********************************\n"
+                + "Welcome to JBlackJack Console App!\nHope you go home with a million bucks!\n"
+                + "**********************************\n";
+        return s;
+    }
+    
+    private String getMenu()
+    {
+        return "Please choose: \n" +
+        		"1)New Game\n2)Quit\n";
+    }
+    
     @Override
     public void init(GameEngine ge)
     {
-        // TODO Auto-generated method stub
-        ge.getGame().showIntro();
+        super.init(ge);
+        
+        ge.getGame().show(getIntroMessage());
+        ge.getGame().show(getMenu());
+        
         try
         {
             Thread.sleep(3400);
@@ -36,42 +54,56 @@ public class BlackJackIntroState extends BlackJackGameState
     @Override
     public void cleanUp()
     {
-        // TODO Auto-generated method stub
         super.cleanUp();
     }
 
     @Override
     public void pause()
     {
-        // TODO Auto-generated method stub
         super.pause();
     }
 
     @Override
     public void resume()
     {
-        // TODO Auto-generated method stub
         super.resume();
     }
 
     @Override
     public void handleEvents()
     {
-        // TODO Auto-generated method stub
         super.handleEvents();
+
+        while(true)
+        {
+            String input = this.getEngine().getGame().getInput();
+            
+            switch (input)
+            {
+            case "1":
+                System.out.println("go to new game state");
+                break;
+            case "2":
+                System.out.println("Quitting the game...");
+                this.getEngine().quit();
+                break;
+            default:
+                break;
+            }
+        }
+        
+        
     }
 
     @Override
     public void update()
     {
-        // TODO Auto-generated method stub
         super.update();
     }
 
     @Override
     public void render()
     {
-        // TODO Auto-generated method stub
         super.render();
     }
     

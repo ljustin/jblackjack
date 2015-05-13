@@ -3,6 +3,7 @@ package com.ljustin.jblackjack;
 import com.ljustin.jblackjack.game.engine.BlackJackGameEngine;
 import com.ljustin.jblackjack.game.engine.BlackJackIntroState;
 import com.ljustin.jblackjack.game.engine.GameEngine;
+import com.ljustin.jblackjack.game.engine.GameState;
 import com.ljustin.jblackjack.models.Deck;
 import com.ljustin.jblackjack.models.DeckFactory;
 
@@ -48,7 +49,7 @@ public class Driver
         
         GameEngine game = new BlackJackGameEngine();
         game.init();
-        
+
         game.changeState(BlackJackIntroState.getInstance());
         
         while (game.isRunning())

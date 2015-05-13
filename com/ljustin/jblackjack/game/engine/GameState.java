@@ -3,7 +3,7 @@ package com.ljustin.jblackjack.game.engine;
 
 public abstract class GameState
 {
-    private GameEngine game;
+    private GameEngine ge;
     private String name;
     
     public GameState(String name)
@@ -11,7 +11,21 @@ public abstract class GameState
         this.setName(name);
     }
     
-    public abstract void init(GameEngine game);
+    public void init(GameEngine ge)
+    {
+        this.ge = ge;
+    }
+    
+    public GameEngine getEngine()
+    {
+        return ge;
+    }
+
+    public void setEngine(GameEngine ge)
+    {
+        this.ge = ge;
+    }
+
     public abstract void cleanUp();
     public abstract void pause();
     public abstract void resume();
@@ -21,7 +35,7 @@ public abstract class GameState
     
     public void changeState(GameState gameState)
     {
-        game.changeState(gameState);
+        ge.changeState(gameState);
     }
 
     public String getName()

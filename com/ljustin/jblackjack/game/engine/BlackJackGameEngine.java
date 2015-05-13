@@ -39,11 +39,10 @@ public class BlackJackGameEngine extends GameEngine
 
     public void changeState(GameState gameState)
     {
-        super.changeState(gameState);
-        // TODO Auto-generated method stub
         String currentState = this.peekState() == null ? "NONE" : this.peekState().toString();
-        
         System.out.println("Changing state from " + currentState + " to " + gameState);
+        
+        super.changeState(gameState);
     }
 
     public void popState()
@@ -62,6 +61,7 @@ public class BlackJackGameEngine extends GameEngine
     {
         // TODO Auto-generated method stub
         isRunning = false;
+        System.exit(0);
     }
 
 
